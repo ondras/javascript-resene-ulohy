@@ -1,28 +1,37 @@
-Pro fanoušky Karla Gotta chystáme vzpomínkový web, který bude obsahovat i texty písní. Některé jsou ale příliš dlouhé, takže je nutné zobrazit jen prvních několik znaků a zbytek textu skrýt. Po kliknutí na tlačítko se ukáže celý text písně.
+1: uvod
 
-```html
-<h1>Mám styl Čendy</h1>
-<pre>
-Mezi námi je mnoho chvil
-A pokusů, abych se ti zavděčil
-Jenomže od tebe se člověk moc nedoví
-Stále básníš o ňákém svém záhadném Čendovi
-</pre>
 
-<script>
-let song = document.querySelector("pre");
-let text = song.textContent;
+2: Na klik neco ukazat	onclick -> hidden, remove
+	drobna vylepseni
+	dalsi DOM metody
+	nacitani skriptu
 
-let visible = text.substring(0, 50);
-song.textContent = visible + "...";
+3: Vic takovych na strance	cyklus
+	anon. fce, arrow fce
+	druhy iteraci
+	scope/closure
 
-let button = document.createElement("button");
-button.textContent = "zobrazit celý text";
-song.append(button);
+client-side validace	preventdefault, podminky	dalsi prace s udalostmi	regularky	blur, timeout
 
-function showCompleteText() {
-	song.textContent = text;
-}
-button.addEventListener("click", showCompleteText);
-</script>
-```
+donacteni dat	xhr	ulozeni do url	fcionalni iterace	prototypy?
+
+vic spa / vic dat		async/await	promises	cors
+
+dalsi browser api	intl	storage	event delegation	ASI?
+
+grafika			svg, canvas	webgl
+
+server-side, bez prohlizece	node	npm	bundling, testovani	deno? bun?
+
+kdyz js nestaci			react?	ts?
+
+
+
+nevim kam dat
+	polyfilly
+	gc
+	es moduly
+	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
+	history api
+	pass by value/ref
+	tooling
