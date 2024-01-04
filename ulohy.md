@@ -28,6 +28,7 @@ kdyz js nestaci			react?	ts?
 
 
 nevim kam dat
+    try-catch
 	polyfilly
 	gc
 	es moduly
