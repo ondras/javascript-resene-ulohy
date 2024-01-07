@@ -1,6 +1,5 @@
 1: uvod
 
-
 2: Na klik neco ukazat	onclick -> hidden, remove
 	drobna vylepseni
 	dalsi DOM metody
@@ -11,19 +10,25 @@
 	druhy iteraci
 	scope/closure
 
-client-side validace	preventdefault, podminky	dalsi prace s udalostmi	regularky	blur, timeout
+4: client-side validace -> preventdefault
+	dalsi prace s udalostmi
+	blur, timeout
+	regularky
 
-donacteni dat	xhr	ulozeni do url	fcionalni iterace	prototypy?
+5: async validace  -> xhr
+	???
 
-vic spa / vic dat		async/await	promises	cors
+6: donacteni dat	xhr	ulozeni do url	fcionalni iterace	prototypy?
 
-dalsi browser api	intl	storage	event delegation	ASI?
+7: vic spa / vic dat		async/await	promises	cors
 
-grafika			svg, canvas	webgl
+8: dalsi browser api	intl	storage	event delegation	ASI?
 
-server-side, bez prohlizece	node	npm	bundling, testovani	deno? bun?
+9: grafika			svg, canvas	webgl
 
-kdyz js nestaci			react?	ts?
+10: server-side, bez prohlizece	node	npm	bundling, testovani	deno? bun?
+
+11: kdyz js nestaci			react?	ts?
 
 
 
