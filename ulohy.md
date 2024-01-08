@@ -10,10 +10,9 @@
 	druhy iteraci
 	scope/closure
 
-4: client-side validace -> preventdefault
-	dalsi prace s udalostmi
-	blur, timeout
-	regularky
+4: client-side validace -> preventdefault, regex
+	dalsi prace s udalostmi, blur
+	timeout,
 
 5: async validace  -> xhr
 	???
