@@ -12,16 +12,24 @@
 
 4: client-side validace -> preventdefault, regex
 	dalsi prace s udalostmi, blur
+	bubble/capture
 	timeout,
 
-5: async validace  -> xhr
-	???
+5: async validace -> xhr, json
+	alternativni rizeni toku kodu
+	falsy values
+	cors
 
-6: donacteni dat	xhr	ulozeni do url	fcionalni iterace	prototypy?
+6: spa / donacteni dat, try-catch
+	ulozeni do url / history api
+	fcionalni iterace
+	async/await	promises, fetch
 
-7: vic spa / vic dat		async/await	promises	cors
+7: vic spa / vic dat
+	classes
+	prototypy?	???
 
-8: dalsi browser api	intl	storage	event delegation	ASI?
+8: dalsi browser api	intl	storage 	event delegation	ASI?
 
 9: grafika			svg, canvas	webgl
 
@@ -32,11 +40,8 @@
 
 
 nevim kam dat
-    try-catch
 	polyfilly
-	gc
 	es moduly
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
-	history api
 	pass by value/ref
 	tooling
