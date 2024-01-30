@@ -20,12 +20,13 @@
 	falsy values
 	cors
 
-6: spa / donacteni dat, try-catch
+6: spa / donacteni dat, innerHTML
 	ulozeni do url / history api
 	fcionalni iterace
 	async/await	promises, fetch
 
 7: vic spa / vic dat
+	event delegation
 	classes
 	prototypy?	???
 
@@ -40,6 +41,7 @@
 
 
 nevim kam dat
+	try-catch
 	polyfilly
 	es moduly
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
