@@ -23,7 +23,7 @@
 6: spa / donacteni dat, innerHTML
 	ulozeni do url / history api
 	fcionalni iterace
-	async/await	promises, fetch
+	promises, async/await fetch
 
 7: vic spa / vic dat
 	event delegation
