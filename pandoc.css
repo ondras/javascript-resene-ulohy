@@ -1,0 +1,12 @@
+body {
+	font-size: 125%;
+}
+
+h1 {
+	page-break-before: always;
+}
+
+pre {
+	page-break-inside: avoid;
+	background-color: #eee;
+}

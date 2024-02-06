@@ -30,7 +30,10 @@
 	classes
 	prototypy?	???
 
-8: dalsi browser api	intl	storage 	?	ASI?
+8: dalsi browser api
+	intl
+	storage
+	?
 
 9: grafika			svg, canvas	webgl
 
@@ -45,6 +48,7 @@ nevim kam dat
 	polyfilly
 	es moduly
 	abortcontroller
+	ASI
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
 	pass by value/ref
 	tooling
