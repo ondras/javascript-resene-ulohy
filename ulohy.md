@@ -12,8 +12,8 @@
 
 4: client-side validace -> preventdefault, regex
 	dalsi prace s udalostmi, blur
-	bubble/capture
-	timeout,
+	bubble/capture / try-catch?
+	timeout
 
 5: async validace -> xhr, json
 	alternativni rizeni toku kodu
@@ -28,7 +28,7 @@
 7: vic spa / vic dat
 	event delegation
 	classes
-	prototypy?	???
+	prototypy?
 
 8: dalsi browser api
 	intl
