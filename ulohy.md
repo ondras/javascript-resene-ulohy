@@ -12,7 +12,7 @@
 
 4: client-side validace -> preventdefault, regex
 	dalsi prace s udalostmi, blur
-	bubble/capture / try-catch?
+	try-catch
 	timeout
 
 5: async validace -> xhr, json
@@ -27,8 +27,8 @@
 
 7: vic spa / vic dat
 	event delegation
-	classes
-	prototypy?
+	bubble/capture
+	classes + prototypy
 
 8: dalsi browser api
 	intl
@@ -44,7 +44,6 @@
 
 
 nevim kam dat
-	try-catch
 	polyfilly
 	es moduly
 	abortcontroller
