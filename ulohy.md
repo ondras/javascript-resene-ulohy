@@ -48,7 +48,6 @@ nevim kam dat
 	polyfilly
 	es moduly
 	abortcontroller
-	ASI
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
 	pass by value/ref
 	tooling
