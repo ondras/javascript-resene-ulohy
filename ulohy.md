@@ -28,10 +28,12 @@
 7: vic spa / vic dat
 	event delegation
 	bubble/capture
-	handleEvent, abortcontroller
+	string->number
 
-8: OOP
-	classes
+
+8: OOP, classes
+	handleEvent, abortcontroller
+	?
 	prototypy
 
 9: dalsi browser api
