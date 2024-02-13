@@ -30,10 +30,9 @@
 	bubble/capture
 	string->number
 
-
 8: OOP, classes
-	handleEvent, abortcontroller
-	?
+	handleEvent, abortcontroller?
+	this
 	prototypy
 
 9: dalsi browser api
