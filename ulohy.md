@@ -28,25 +28,27 @@
 7: vic spa / vic dat
 	event delegation
 	bubble/capture
-	classes + prototypy
+	handleEvent, abortcontroller
 
-8: dalsi browser api
+8: OOP
+	classes
+	prototypy
+
+9: dalsi browser api
 	intl
 	storage
 	?
 
-9: grafika			svg, canvas	webgl
+10: grafika			svg, canvas	webgl
 
-10: server-side, bez prohlizece	node	npm	bundling, testovani	deno? bun?
+11: server-side, bez prohlizece	node	npm	bundling, testovani	deno? bun?
 
-11: kdyz js nestaci			react?	ts?
+12: kdyz js nestaci			react?	ts?
 
 
 
 nevim kam dat
 	polyfilly
 	es moduly
-	abortcontroller
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
 	pass by value/ref
-	tooling
