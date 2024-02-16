@@ -2,8 +2,12 @@ body {
 	font-size: 125%;
 }
 
-h1 {
+h1, h2 {
 	page-break-before: always;
+}
+
+h1 + h2 {
+	page-break-before: avoid;
 }
 
 pre {
