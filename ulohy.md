@@ -50,6 +50,13 @@
 
 nevim kam dat
 	polyfilly
-	es moduly
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
 	pass by value/ref
+	getter/setter
+	web components
+
+todo
+  ozkouset veskery kod
+  doplnit bold
+  doplnit obrazky
+  doplnit odkazy namisto autodetekce url
