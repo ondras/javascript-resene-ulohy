@@ -35,25 +35,30 @@
 	this
 	prototypy
 
-9: dalsi browser api
+9: web components
+	getter/setter
+	pass by value/ref
+	shadow dom
+
+
+10: dalsi browser api
 	intl
 	storage
-	?
-
-10: grafika			svg, canvas	webgl
-
-11: server-side, bez prohlizece	node	npm	bundling, testovani	deno? bun?
-
-12: kdyz js nestaci			react?	ts?
-
-
-
-nevim kam dat
-	polyfilly
+	polyfilly pro nejaky api
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
-	pass by value/ref
-	getter/setter
-	web components
+
+11: grafika	- co s ni? api pro praci s opraskama?
+	svg
+	canvas
+	webgl
+
+12: server-side, bez prohlizece -	node
+	npm
+	bundling, testovani
+	deno? bun?
+
+13: kdyz js nestaci			react?	ts?
+
 
 todo
   ozkouset veskery kod
