@@ -38,8 +38,8 @@
 9: web components
 	getter/setter
 	pass by value/ref
-	shadow dom
-
+	shadow dom?
+	custom events?
 
 10: dalsi browser api
 	intl
