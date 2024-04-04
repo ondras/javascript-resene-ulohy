@@ -36,9 +36,9 @@
 	prototypy
 
 9: web components
-	getter/setter, pass by value/ref
+	getter/setter
+	pass by value/ref
 	custom events
-	shadow dom?
 
 10: dalsi browser api
 	intl
