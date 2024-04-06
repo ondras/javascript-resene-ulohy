@@ -4,6 +4,11 @@ body {
 
 h1, h2 {
 	page-break-before: always;
+	page-break-after: avoid;
+}
+
+h3 {
+	page-break-after: avoid;
 }
 
 h1 + h2 {

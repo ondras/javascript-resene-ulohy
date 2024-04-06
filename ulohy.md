@@ -31,7 +31,7 @@
 	string->number
 
 8: OOP, classes
-	handleEvent, abortcontroller?
+	handleEvent, abortcontroller
 	this
 	prototypy
 
