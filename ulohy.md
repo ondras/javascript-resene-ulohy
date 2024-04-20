@@ -46,20 +46,24 @@
 	polyfilly pro nejaky api
 	zmineni kotle dalsich browser apis: crypto, audio, midi, gamepad, device, speech, workers, websocket / sse
 
-11: grafika	- co s ni? api pro praci s opraskama?
-	svg
-	canvas
-	webgl
+11: grafika	- zmensovani nahranych obrazku
+	vic o canvasu, svg
+	vstup z kamery
+	dpr, antialias, taint
+	webgl NE, k cemu?
 
-12: server-side, bez prohlizece -	node
+12: server-side, bez prohlizece - node
 	npm
 	bundling, testovani
 	deno? bun?
 
-13: kdyz js nestaci			react?	ts?
+13: kdyz js nestaci
+		react?
+		ts?
 
 
 todo
+  doresit fixmes
   ozkouset veskery kod
   doplnit bold
   doplnit obrazky
