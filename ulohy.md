@@ -50,7 +50,6 @@
 	vic o canvasu, svg
 	vstup z kamery
 	dpr, antialias, taint
-	webgl NE, k cemu?
 
 12: server-side, bez prohlizece - node
 	npm
@@ -68,3 +67,4 @@ todo
   doplnit bold
   doplnit obrazky
   doplnit odkazy namisto autodetekce url
+  kam SVG?
