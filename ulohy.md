@@ -5,3 +5,4 @@ todo
   doplnit obrazky
   doplnit odkazy namisto autodetekce url
   kam SVG?
+  esbuild?
