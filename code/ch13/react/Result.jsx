@@ -6,6 +6,6 @@ export default function Result(props) {
 	return <li>
 		<a href={props.data.url}>{props.data.title}</a>
 		<br/>
-		<span dangerouslySetInnerHTML={html}></span>
+		<span dangerouslySetInnerHTML={html} />
 	</li>;
 }

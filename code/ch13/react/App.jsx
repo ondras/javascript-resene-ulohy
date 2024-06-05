@@ -26,6 +26,6 @@ export default function App() {
         <button>🔎</button>
       </label>
     </form>
-    <Results data={results} query={query}></Results>
+    <Results data={results} query={query} />
   </>;
 }

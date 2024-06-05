@@ -4,7 +4,7 @@ import Result from "./Result.jsx";
 
 export default function Results(props) {
 	if (!props.query) {
-		return <></>;
+		return;
 	}
 
 	if (!props.data.length) {
@@ -14,7 +14,7 @@ export default function Results(props) {
 	return <>
 		<h2>Nalezené písně pro dotaz: {props.query}</h2>
 		<ol>
-			{props.data.map(item => <Result data={item}></Result>)}
+			{props.data.map(item => <Result data={item} />)}
 		</ol>
 	</>;
 }

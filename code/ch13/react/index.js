@@ -23543,7 +23543,7 @@
   // Results.jsx
   function Results(props) {
     if (!props.query) {
-      return /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null);
+      return;
     }
     if (!props.data.length) {
       return /* @__PURE__ */ import_react2.default.createElement("p", null, "Tomuto dotazu nevyhovuj\xED \u017E\xE1dn\xE9 p\xEDsn\u011B \u{1F641}");
