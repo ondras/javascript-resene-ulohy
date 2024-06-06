@@ -5,4 +5,5 @@ todo
   doplnit obrazky
   doplnit odkazy namisto autodetekce url
   kam SVG?
-  esbuild?
+  makeitright/fast
+  iteracni protokol
