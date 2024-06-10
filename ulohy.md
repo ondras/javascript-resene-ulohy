@@ -4,6 +4,8 @@ todo
   doplnit bold
   doplnit obrazky
   doplnit odkazy namisto autodetekce url
-  kam SVG?
   makeitright/fast
+
+bonusy?
+  svg
   iteracni protokol
