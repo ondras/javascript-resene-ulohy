@@ -1,0 +1,23 @@
+<h1>Mám styl Čendy</h1>
+<pre>
+Mezi námi je mnoho chvil
+A pokusů, abych se ti zavděčil
+Jenomže od tebe se člověk moc nedoví
+Stále básníš o ňákém svém záhadném Čendovi
+</pre>
+
+<script>
+let song = document.querySelector("pre");
+let text = song.textContent;
+
+song.textContent = text.substring(0, 50) + "...";
+
+let button = document.createElement("button");
+button.textContent = "zobrazit celý text";
+song.append(button);
+
+function showCompleteText() {
+	song.textContent = text;
+}
+button.addEventListener("click", showCompleteText);
+</script>
