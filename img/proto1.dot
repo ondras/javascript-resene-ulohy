@@ -1,0 +1,15 @@
+digraph G {
+    rankdir=BT
+    node[fontname=monospace]
+    cp -> approve
+    cp -> buildDeleteButton
+    obj -> cp [style=dashed]
+    bcp -> cp [style=dashed]
+    bobj -> bcp [style=dashed]
+
+    bobj[label="betterObj"]
+    cp[label="commentPrototype"]
+    bcp[label="betterCommentPrototype"]
+    approve[label="approve()"]
+    buildDeleteButton[label="buildDeleteButton()"]
+}

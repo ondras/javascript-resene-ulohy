@@ -1,0 +1,13 @@
+graph G {
+    node[fontname=monospace]
+    "<html>" -- "<head>"
+    "<head>" -- "<title>"
+    "<title>" -- "Titulek"
+    "<html>" -- "<body>"
+    "<body>" -- "<h1>"
+    "<h1>" -- "Nadpis"
+    "<body>" -- "<p>"
+    "<p>" -- "Odstavec s"
+    "<p>" -- "<a>"
+    "<a>" -- "odkazem"
+}
