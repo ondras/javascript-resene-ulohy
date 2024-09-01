@@ -5,7 +5,7 @@ todo
   doplnit obrazky
   doplnit odkazy namisto autodetekce url
   makeitright/fast
+  odkaz na repo s ukazkama
 
 bonusy?
   svg
-  iteracni protokol
