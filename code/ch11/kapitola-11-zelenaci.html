@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head><link rel="icon" /></head>
+	<script>
+
+let canvas = document.createElement("canvas");
+const SIZE = 32;
+canvas.width = canvas.height = SIZE;
+let ctx = canvas.getContext("2d");
+
+
+function draw(angle) {
+	ctx.clearRect(0, 0, SIZE, SIZE);
+	ctx.beginPath();
+	ctx.moveTo(SIZE/2, SIZE/2);
+	ctx.lineTo(SIZE, SIZE/2);
+	ctx.arc(SIZE/2, SIZE/2, SIZE/2, 0, angle);
+	ctx.closePath();
+	ctx.fillStyle = "green";
+	ctx.fill();
+
+	let link = document.head.querySelector("[rel=icon]");
+	link.href = canvas.toDataURL("image/png");
+}
+
+let angle = 0;
+setInterval(() => {
+	angle = (angle + 0.2) % (Math.PI * 2);
+	draw(angle);
+}, 100);
+
+	</script>
+</html>

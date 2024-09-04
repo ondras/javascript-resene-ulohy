@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head><link rel="icon" /></head>
+	<svg width="64" height="64" viewBox="0 0 20 20">
+		<circle cx="10" cy="10" r="10" fill="lime" />
+		<path fill="green" />
+	</svg>
+	<script>
+
+function draw(angle) {
+	let svg = document.querySelector("svg");
+
+	let x = 10 + Math.cos(angle) * 10;
+	let y = 10 + Math.sin(angle) * 10;
+	let largeArc = (angle > Math.PI ? 1 : 0);
+	let d = `M 10 10 L 20 10 A 10 10 0 ${largeArc} 1 ${x} ${y}`;
+	svg.querySelector("path").setAttribute("d", d);
+
+	let link = document.head.querySelector("[rel=icon]");
+	let str = new XMLSerializer().serializeToString(svg);
+	link.href = `data:image/svg+xml,${str}`;
+}
+
+let angle = 0;
+setInterval(() => {
+	angle = (angle + 0.2) % (Math.PI * 2);
+	draw(angle);
+}, 100);
+
+	</script>
+</html>
