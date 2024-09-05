@@ -7,4 +7,4 @@ todo
   obrazky texty/captions
 
 bonusy:
-  - neco pro zelenace
+  - strict mode
