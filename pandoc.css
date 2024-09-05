@@ -5,11 +5,11 @@
 
 body {
 	font-size: 125%;
-	font-family: literata;
+	font-family: literata, serif;
 }
 
 h1, h2, h3 {
-	font-family: rubik;
+	font-family: rubik, sans-serif;
 }
 
 h1, h2 {
@@ -37,4 +37,15 @@ p {
 
 q {
 	quotes: "„" "“" "‚" "‘" "«" "»";
+}
+
+figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	figcaption {
+		border-top: 1px solid gray;
+		text-align: center;
+	}
 }

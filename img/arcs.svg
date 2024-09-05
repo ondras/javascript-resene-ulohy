@@ -7,7 +7,7 @@
                  fill="none" stroke="#888888" stroke-width="2" />
         <ellipse cx="225" cy="75" rx="100" ry="50"
                  fill="none" stroke="#888888" stroke-width="2" />
-        <text x="44" y="66">začátek</text>
+        <text x="58" y="66">začátek</text>
         <text x="230" y="145">konec</text>
       </g>
     </defs>
