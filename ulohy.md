@@ -5,6 +5,3 @@ todo
   doplnit obrazky
   odkaz na repo s ukazkama
   obrazky texty/captions
-
-bonusy:
-  - strict mode
