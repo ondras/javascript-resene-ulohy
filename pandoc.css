@@ -41,6 +41,9 @@ figure {
 	}
 }
 
+img {
+	max-width: 100%;
+}
 
 /* book1-like design */
 
@@ -56,7 +59,7 @@ figure {
 
 h1 {
 	counter-increment: chapter;
-	--space: 8px;
+	--space: 6px;
 	&::before {
 		content: "Kapitola " counter(chapter);
 		display: block;
