@@ -5,7 +5,7 @@
 
 body {
 	--font-sans-serif: rubik, sans-serif;
-	--font-serif: literatal, serif;
+	--font-serif: literata, serif;
 	font-family: var(--font-serif);
 }
 
@@ -44,6 +44,7 @@ figure {
 
 img {
 	max-width: 100%;
+	page-break-inside: avoid;
 }
 
 /* book1-like design */
