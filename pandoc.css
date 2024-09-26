@@ -7,6 +7,7 @@ body {
 	--font-sans-serif: rubik, sans-serif;
 	--font-serif: literata, serif;
 	font-family: var(--font-serif);
+	hyphens: auto;
 }
 
 h1, h2 {
@@ -30,6 +31,7 @@ pre {
 
 p {
 	line-height: 1.3;
+	text-align: justify;
 }
 
 figure {
@@ -47,16 +49,19 @@ img {
 	page-break-inside: avoid;
 }
 
+
 /* book1-like design */
 
 @media print {
 	body {
 		font-size: 13px;
+		margin: 0;
 	}
 }
 
 @page {
 	size: A5;
+	margin: 10mm;
 }
 
 h1 {
