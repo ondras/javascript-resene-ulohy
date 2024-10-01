@@ -3,16 +3,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap');
+
 body {
-	--font-sans-serif: rubik, sans-serif;
-	--font-serif: literata, serif;
+	--font-sans-serif: jost, sans-serif;
+	--font-serif: eb garamond, serif;
+	--font-mono: noto sans mono, monospace;
 	font-family: var(--font-serif);
 	hyphens: auto;
+	font-size: 12pt;
+}
+
+code {
 	font-size: 10pt;
+	font-family: var(--font-mono);
 }
 
 /* zakaz lamani stranek uvnitr */
-pre, figure, img {
+FIXME {
 	page-break-inside: avoid;
 }
 
@@ -22,13 +32,12 @@ h1, h2, h3 {
 }
 
 /* kapitola zacina na nove strance */
-h1 {
+h1:not(.title), #TOC {
 	page-break-before: always;
 }
 
-pre {
-	background-color: #eee;
-	tab-size: 4;
+header, header p {
+	text-align: center;
 }
 
 p {
@@ -63,6 +72,10 @@ pre > code.sourceCode > span {
 	body {
 		margin: 0;
 	}
+
+	header {
+		margin-top: 10em;
+	}
 }
 
 @page {
@@ -71,7 +84,63 @@ pre > code.sourceCode > span {
 	margin: 20mm;
 }
 
-h1 {
+@page :left {
+	@bottom-left-corner {
+		content: counter(page);
+		font-family: jost, sans-serif;
+	}
+}
+
+@page :right {
+	@bottom-right-corner {
+		content: counter(page);
+		font-family: jost, sans-serif;
+	}
+}
+
+#TOC + h1 {
+	page: first;
+}
+
+@page first {
+	counter-reset: page 1;
+}
+
+
+header, #TOC {
+	page: no-numbers;
+}
+
+@page no-numbers {
+	@bottom-left-corner { content: ""; }
+	@bottom-right-corner { content: ""; }
+}
+
+#TOC {
+	font-family: var(--font-sans-serif);
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&::after {
+			content: " " leader(dotted) " " target-counter(attr(href), page);
+		}
+	}
+
+	ul { list-style: none; }
+
+	> ul {
+		padding-left: 0;
+		> li > a { font-weight: bold; }
+	}
+}
+
+ul, ol {
+	padding-left: 24px;
+}
+
+h1:not(.title) {
 	counter-increment: chapter;
 	--space: 6px;
 	&::before {
@@ -83,6 +152,7 @@ h1 {
 		margin-bottom: var(--space);
 	}
 }
+
 
 h1, h2, h3 {
 	font-family: var(--font-sans-serif);
@@ -102,6 +172,10 @@ h3 {
 
 ::marker {
 	font-weight: bold;
+}
+
+ul {
+	list-style-type: "■  ";
 }
 
 figure {
