@@ -8,23 +8,25 @@ body {
 	--font-serif: literata, serif;
 	font-family: var(--font-serif);
 	hyphens: auto;
+	font-size: 10pt;
 }
 
-h1, h2 {
+/* zakaz lamani stranek uvnitr */
+pre, figure, img {
+	page-break-inside: avoid;
+}
+
+/* nadpisy musi byt spojeny s textem */
+h1, h2, h3 {
+	page-break-after: avoid;
+}
+
+/* kapitola zacina na nove strance */
+h1 {
 	page-break-before: always;
-	page-break-after: avoid;
-}
-
-h3 {
-	page-break-after: avoid;
-}
-
-h1 + h2 {
-	page-break-before: avoid;
 }
 
 pre {
-	page-break-inside: avoid;
 	background-color: #eee;
 	tab-size: 4;
 }
@@ -46,15 +48,18 @@ figure {
 
 img {
 	max-width: 100%;
-	page-break-inside: avoid;
 }
 
+/* Work around pandoc ticket #9292 */
+pre > code.sourceCode > span {
+	text-indent: 0 !important;
+	padding-left: 0 !important;
+}
 
 /* book1-like design */
 
 @media print {
 	body {
-		font-size: 13px;
 		margin: 0;
 	}
 }
