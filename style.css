@@ -21,11 +21,6 @@ code {
 	font-family: var(--font-mono);
 }
 
-/* zakaz lamani stranek uvnitr */
-FIXME {
-	page-break-inside: avoid;
-}
-
 /* nadpisy musi byt spojeny s textem */
 h1, h2, h3 {
 	page-break-after: avoid;
@@ -66,7 +61,16 @@ pre > code.sourceCode > span {
 	padding-left: 0 !important;
 }
 
-/* book1-like design */
+@media screen {
+	body {
+		margin: 0 auto;
+		width: 136mm;
+	}
+
+	#TOC {
+		display: none;
+	}
+}
 
 @media print {
 	body {
@@ -132,7 +136,15 @@ header, #TOC {
 
 	> ul {
 		padding-left: 0;
-		> li > a { font-weight: bold; }
+		> li {
+			counter-increment: toc-chapter;
+			> a {
+				font-weight: bold;
+				&::before {
+					content: "Kapitola " counter(toc-chapter) ": ";
+				}
+			}
+		}
 	}
 }
 
@@ -175,7 +187,11 @@ h3 {
 }
 
 ul {
-	list-style-type: "■  ";
+	list-style-type: square;
+}
+
+pre {
+	background-color: #f0f0f0;
 }
 
 figure {
