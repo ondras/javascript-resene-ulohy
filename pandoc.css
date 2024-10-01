@@ -43,11 +43,12 @@ figure {
 
 	figcaption {
 		text-align: center;
+		width: 10cm;
 	}
 }
 
 img {
-	max-width: 100%;
+	max-width: 13cm;
 }
 
 /* Work around pandoc ticket #9292 */
@@ -65,8 +66,9 @@ pre > code.sourceCode > span {
 }
 
 @page {
-	size: A5;
-	margin: 10mm;
+	/* B5: 176mm x 250mm, margin 20mm => obsah 136mm */
+	size: B5;
+	margin: 20mm;
 }
 
 h1 {
@@ -90,12 +92,12 @@ h1, h2, h3 {
 
 h2 {
 	/* default 5/6 */
-	margin-bottom: calc(5/12 * 1em);
+	margin-bottom: 0.4em;
 }
 
 h3 {
 	/* default 1 */
-	margin-bottom: calc(1/2 * 1em);
+	margin-bottom: 0.5em;
 }
 
 ::marker {
