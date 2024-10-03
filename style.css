@@ -86,17 +86,8 @@ pre > code.sourceCode > span {
 	/* B5: 176mm x 250mm, margin 20mm => obsah 136mm */
 	size: B5;
 	margin: 20mm;
-}
 
-@page :left {
-	@bottom-left-corner {
-		content: counter(page);
-		font-family: jost, sans-serif;
-	}
-}
-
-@page :right {
-	@bottom-right-corner {
+	@bottom-center {
 		content: counter(page);
 		font-family: jost, sans-serif;
 	}
@@ -116,8 +107,7 @@ header, #TOC {
 }
 
 @page no-numbers {
-	@bottom-left-corner { content: ""; }
-	@bottom-right-corner { content: ""; }
+	@bottom-center { content: ""; }
 }
 
 #TOC {
