@@ -1,53 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap');
-
-body {
+:root {
 	--font-sans-serif: jost, sans-serif;
 	--font-serif: eb garamond, serif;
 	--font-mono: noto sans mono, monospace;
+	--font-size-body: 12pt;
+	--font-size-code-block: 10pt;
+	--font-size-code-inline: 9pt;
+}
+
+body {
 	font-family: var(--font-serif);
 	hyphens: auto;
-	font-size: 12pt;
+	font-size: var(--font-size-body);
 }
 
 code {
-	font-size: 10pt;
 	font-family: var(--font-mono);
-}
-
-/* nadpisy musi byt spojeny s textem */
-h1, h2, h3 {
-	page-break-after: avoid;
-}
-
-/* kapitola zacina na nove strance */
-h1:not(.title), #TOC {
-	page-break-before: always;
 }
 
 header, header p {
 	text-align: center;
 }
 
-p {
-	line-height: 1.3;
-	text-align: justify;
+header {
+	margin-top: 10em;
 }
 
 figure {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 2em;
 
 	figcaption {
 		text-align: center;
 		width: 10cm;
+		margin-top: 1em;
+		font-size: 90%;
+		font-family: var(--font-sans-serif);
+		&::before {
+			content: "Obrázek: ";
+			font-weight: bold;
+		}
 	}
 }
 
@@ -55,10 +52,55 @@ img {
 	max-width: 13cm;
 }
 
-/* Work around pandoc ticket #9292 */
-pre > code.sourceCode > span {
-	text-indent: 0 !important;
-	padding-left: 0 !important;
+ul, ol {
+	padding-left: 24px;
+}
+
+ul {
+	list-style-type: square;
+}
+
+h1:not(.title) {
+	counter-increment: chapter;
+	--space: 6px;
+	&::before {
+		content: "Kapitola " counter(chapter);
+		display: block;
+		text-align: right;
+		border-bottom: 2px solid gray;
+		padding-bottom: var(--space);
+		margin-bottom: var(--space);
+	}
+}
+
+
+h1, h2, h3 {
+	font-family: var(--font-sans-serif);
+	font-weight: normal;
+	page-break-after: avoid;  /* nadpis spojeny s naslednym textem */
+	& + * { margin-top: 0 !important; /* prebijime mj. pandoc .sourceCode */ }
+}
+h2 { margin-bottom: 0; /* default 5/6 */ }
+h3 { margin-bottom: 0; 	/* default 1 */ }
+
+::marker { font-weight: bold; }
+
+pre {
+	background-color: #f0f0f0;
+	code {
+		font-size: var(--font-size-code-block);
+	}
+}
+
+p {
+	line-height: 1.4;
+	text-align: justify;
+}
+
+p code, li code {
+	font-weight: bold;
+	font-size: var(--font-size-code-inline);
+	white-space: nowrap;
 }
 
 @media screen {
@@ -77,8 +119,15 @@ pre > code.sourceCode > span {
 		margin: 0;
 	}
 
-	header {
-		margin-top: 10em;
+	/* kapitola zacina na nove strance */
+	h1:not(.title), #TOC {
+		page-break-before: always;
+	}
+
+	/* Work around pandoc ticket #9292 */
+	pre > code.sourceCode > span {
+		text-indent: 0 !important;
+		padding-left: 0 !important;
 	}
 }
 
@@ -89,7 +138,7 @@ pre > code.sourceCode > span {
 
 	@bottom-center {
 		content: counter(page);
-		font-family: jost, sans-serif;
+		font-family: var(--font-sans-serif);
 	}
 }
 
@@ -134,65 +183,6 @@ header, #TOC {
 					content: "Kapitola " counter(toc-chapter) ": ";
 				}
 			}
-		}
-	}
-}
-
-ul, ol {
-	padding-left: 24px;
-}
-
-h1:not(.title) {
-	counter-increment: chapter;
-	--space: 6px;
-	&::before {
-		content: "Kapitola " counter(chapter);
-		display: block;
-		text-align: right;
-		border-bottom: 2px solid gray;
-		padding-bottom: var(--space);
-		margin-bottom: var(--space);
-	}
-}
-
-
-h1, h2, h3 {
-	font-family: var(--font-sans-serif);
-	font-weight: normal;
-	& + p { margin-top: 0; }
-}
-
-h2 {
-	/* default 5/6 */
-	margin-bottom: 0.4em;
-}
-
-h3 {
-	/* default 1 */
-	margin-bottom: 0.5em;
-}
-
-::marker {
-	font-weight: bold;
-}
-
-ul {
-	list-style-type: square;
-}
-
-pre {
-	background-color: #f0f0f0;
-}
-
-figure {
-	margin-bottom: 1em;
-	figcaption {
-		margin-top: 1em;
-		font-size: 90%;
-		font-family: var(--font-sans-serif);
-		&::before {
-			content: "Obrázek: ";
-			font-weight: bold;
 		}
 	}
 }

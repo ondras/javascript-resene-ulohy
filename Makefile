@@ -6,5 +6,5 @@ build/book.html: src/*.md src/*.yml
 build/book-1.html: src/ch01.md src/*.yml
 	pandoc $(PANDOC_ARGS) -o $@ $^
 
-build/%.pdf: build/%.html
+build/%.pdf: build/%.html *.css
 	weasyprint $< $@
