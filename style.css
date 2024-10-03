@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap');
 
 :root {
 	--font-sans-serif: jost, sans-serif;
 	--font-serif: eb garamond, serif;
+	--font-serif: crimson pro, eb garamond, serif;
+	--font-mono: inconsolata, noto sans mono, monospace;
 	--font-mono: noto sans mono, monospace;
+
 	--font-size-body: 12pt;
 	--font-size-code-block: 10pt;
-	--font-size-code-inline: 9pt;
+	--font-size-code-inline: 10pt;
 }
 
 body {
@@ -117,6 +122,7 @@ p code, li code {
 @media print {
 	body {
 		margin: 0;
+		filter: grayscale(100%);
 	}
 
 	/* kapitola zacina na nove strance */
