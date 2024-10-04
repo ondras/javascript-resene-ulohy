@@ -2,18 +2,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 
 :root {
 	--font-sans-serif: jost, sans-serif;
 	--font-serif: eb garamond, serif;
 	--font-serif: crimson pro, eb garamond, serif;
-	--font-mono: inconsolata, noto sans mono, monospace;
-	--font-mono: noto sans mono, monospace;
 
 	--font-size-body: 12pt;
+	--line-height: 1.3;
+
+	/* noto mode */
+	--font-mono: noto sans mono, monospace;
 	--font-size-code-block: 10pt;
 	--font-size-code-inline: 10pt;
+
+	/* inconsolata mode */
+	--font-mono: inconsolata, noto sans mono, monospace;
+	--font-size-code-block: 11pt;
+	--font-size-code-inline: 11pt;
+	/**/
 }
 
 body {
@@ -65,6 +73,10 @@ ul {
 	list-style-type: square;
 }
 
+a {
+	xword-break: break-all;
+}
+
 h1:not(.title) {
 	counter-increment: chapter;
 	--space: 6px;
@@ -85,10 +97,20 @@ h1, h2, h3 {
 	page-break-after: avoid;  /* nadpis spojeny s naslednym textem */
 	& + * { margin-top: 0 !important; /* prebijime mj. pandoc .sourceCode */ }
 }
-h2 { margin-bottom: 0; /* default 5/6 */ }
-h3 { margin-bottom: 0; 	/* default 1 */ }
 
-::marker { font-weight: bold; }
+h2 {
+	margin-top: 2em;
+	margin-bottom: 0; /* default 5/6 */
+}
+
+h3 {
+	margin-bottom: 0; 	/* default 1 */
+}
+
+::marker {
+	font-weight: bold;
+	line-height: var(--line-height);
+}
 
 pre {
 	background-color: #f0f0f0;
@@ -98,7 +120,7 @@ pre {
 }
 
 p {
-	line-height: 1.4;
+	line-height: var(--line-height);
 	text-align: justify;
 }
 
@@ -122,7 +144,6 @@ p code, li code {
 @media print {
 	body {
 		margin: 0;
-		filter: grayscale(100%);
 	}
 
 	/* kapitola zacina na nove strance */
@@ -167,6 +188,10 @@ header, #TOC {
 
 #TOC {
 	font-family: var(--font-sans-serif);
+
+	h2 {
+		margin-top: 0;
+	}
 
 	a {
 		text-decoration: none;
