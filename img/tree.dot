@@ -1,5 +1,6 @@
 graph G {
-    node[fontname=monospace]
+    graph [size="4,4!"]
+    node [fontname=monospace]
     "<html>" -- "<head>"
     "<head>" -- "<title>"
     "<title>" -- "Titulek"
