@@ -28,8 +28,9 @@
 
 body {
 	font-family: var(--font-serif);
-	hyphens: auto;
 	font-size: var(--font-size-body);
+	line-height: var(--line-height);
+	hyphens: auto;
 }
 
 code {
@@ -114,7 +115,6 @@ h3 {
 
 ol > li::marker {
 	font-weight: bold;
-	line-height: var(--line-height);
 }
 
 pre {
@@ -125,7 +125,6 @@ pre {
 }
 
 p {
-	line-height: var(--line-height);
 	text-align: justify;
 }
 
