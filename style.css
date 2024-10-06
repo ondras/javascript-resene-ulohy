@@ -81,6 +81,7 @@ a {
 h1:not(.title) {
 	counter-increment: chapter;
 	--space: 6px;
+	string-set: chapter "Kapitola " counter(chapter) ": " content();
 	&::before {
 		content: "Kapitola " counter(chapter);
 		display: block;
@@ -176,27 +177,32 @@ li p {
 @page {
 	/* B5: 176mm x 250mm, margin 20mm => obsah 136mm */
 	size: B5;
-	margin: 20mm;
+	margin: 24mm 20mm;
+
+	@top-center {
+		font-family: var(--font-sans-serif);
+		content: string(chapter);
+	}
 
 	@bottom-center {
-		content: counter(page);
 		font-family: var(--font-sans-serif);
+		content: counter(page);
 	}
 }
 
-#TOC + h1 {
-	page: first;
-}
 
+#TOC + h1 { page: first; }
 @page first {
 	counter-reset: page 1;
+	@top-center { content: ""; }
 }
 
-
-header, #TOC {
-	page: no-numbers;
+h1:not(.title) { page: chapter; }
+@page chapter {
+	@top-center { content: ""; }
 }
 
+header, #TOC { page: no-numbers; }
 @page no-numbers {
 	@bottom-center { content: ""; }
 }
@@ -204,19 +210,7 @@ header, #TOC {
 #TOC {
 	font-family: var(--font-sans-serif);
 
-	h2 {
-		margin-top: 0;
-	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
-
-		&::after {
-			content: " " leader(dotted) " " target-counter(attr(href), page);
-		}
-	}
-
+	h2 { margin-top: 0; }
 	ul { list-style: none; }
 
 	> ul {
@@ -229,6 +223,15 @@ header, #TOC {
 					content: "Kapitola " counter(toc-chapter) ": ";
 				}
 			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&::after {
+			content: " " leader(dotted) " " target-counter(attr(href), page);
 		}
 	}
 }
