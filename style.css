@@ -41,6 +41,10 @@ header, header p {
 
 header {
 	margin-top: 10em;
+	h1 { font-weight: bold; }
+	.author {
+		font-size: 150%;
+	}
 }
 
 figure {
