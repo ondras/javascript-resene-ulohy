@@ -131,7 +131,6 @@ p {
 p code, li > code {
 	font-weight: bold;
 	font-size: var(--font-size-code-inline);
-	white-space: nowrap;
 }
 
 @media screen {
