@@ -16,13 +16,11 @@
 
 	/* noto mode */
 	--font-mono: noto sans mono, monospace;
-	--font-size-code-block: 10pt;
-	--font-size-code-inline: 10pt;
+	--font-size-code: 10pt;
 
 	/* inconsolata mode */
 	--font-mono: inconsolata, noto sans mono, monospace;
-	--font-size-code-block: 11pt;
-	--font-size-code-inline: 11pt;
+	--font-size-code: 11pt;
 	/**/
 }
 
@@ -117,11 +115,12 @@ ol > li::marker {
 	font-weight: bold;
 }
 
+code {
+	font-size: var(--font-size-code);
+}
+
 pre {
 	background-color: #f0f0f0;
-	code {
-		font-size: var(--font-size-code-block);
-	}
 }
 
 p {
@@ -130,7 +129,11 @@ p {
 
 p code, li > code {
 	font-weight: bold;
-	font-size: var(--font-size-code-inline);
+	white-space: nowrap;
+}
+
+li p {
+	margin: 0.5em 0;
 }
 
 @media screen {
