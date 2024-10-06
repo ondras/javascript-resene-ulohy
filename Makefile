@@ -8,3 +8,6 @@ build/book-%.html: src/ch%.md src/*.yml
 
 build/%.pdf: build/%.html *.css
 	weasyprint -d $< $@
+
+vlna:
+	vlna -x 266e6273703b -v KkSsVvZzOoUuAaIi
