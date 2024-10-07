@@ -73,7 +73,7 @@ figure {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 2em;
+	margin: 0 0 2em 0;
 
 	figcaption {
 		text-align: center;
