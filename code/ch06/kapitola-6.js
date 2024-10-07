@@ -10,7 +10,7 @@ function buildSong(song) {
 function showResults(xhr, query) {
 	let songs = xhr.response;
 	if (songs.length == 0) {
-		results.replaceChildren("Tomuto dotazu nevyhovují žádné písně 🙁");
+		results.replaceChildren("Dotazu nevyhovují žádné písně 🙁");
 		return;
 	}
 
