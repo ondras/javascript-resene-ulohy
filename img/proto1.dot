@@ -1,6 +1,7 @@
 digraph G {
+    graph [size="4,4!"]
     rankdir=BT
-    node[fontname=monospace]
+    node[fontname=monospace, fontsize=9]
     cp -> approve
     cp -> buildDeleteButton
     obj -> cp [style=dashed]
