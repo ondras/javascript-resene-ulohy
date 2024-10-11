@@ -102,10 +102,6 @@ ul {
 	list-style-type: square;
 }
 
-a {
-	xword-break: break-all;
-}
-
 h1:not(.title) {
 	counter-increment: chapter;
 	--space: 6px;
