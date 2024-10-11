@@ -8,10 +8,11 @@ async function loadImage(file) {
 }
 
 function resizeImage(img) {
-	let scale = Math.max(img.naturalWidth/MAX, img.naturalHeight/MAX, 1);
+	const { width, height } = img;
+	let scale = Math.max(width/MAX, height/MAX, 1);
 	let canvas = document.createElement("canvas");
-	canvas.width = Math.round(img.width / scale);
-	canvas.height = Math.round(img.height / scale);
+	canvas.width = Math.round(width / scale);
+	canvas.height = Math.round(height / scale);
 	let ctx = canvas.getContext("2d");
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 	return canvas.toDataURL("image/jpeg");

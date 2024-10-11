@@ -66,7 +66,7 @@ function labels(fixed) {
   let t3 = text(fixed? "(3,5; 5)" : "(3; 5)");
   t3.setAttribute("fill", "red");
   t3.setAttribute("x", offset + 4*cell + fo);
-  t3.setAttribute("y", offset + 5*cell -4);
+  t3.setAttribute("y", offset + 5.5*cell + 4);
 
   g.append(t1, t2, t3);
 
@@ -99,7 +99,7 @@ function lineBlue(fixed) {
 
 function lineCyan() {
   let path = elm("path");
-  path.setAttribute("stroke", "rgba(100 100 255 / 0.5)");
+  path.setAttribute("stroke", "rgba(100, 100, 255, 0.5)");
   path.setAttribute("stroke-width", `${2*cell}`)
   let d = "";
   d += `M ${offset + 3*cell + 0.5} ${offset + cell}`;
@@ -109,9 +109,9 @@ function lineCyan() {
 }
 
 let svg = document.querySelector("svg");
- svg.append(grid(), lineRed(), labels());
+// svg.append(grid(), lineRed(), labels());
 // svg.append(lineCyan(), lineBlue(), grid(), lineRed(), labels());
-//svg.append(lineBlue(true), grid(), lineRed(true), labels(true));
+svg.append(lineBlue(true), grid(), lineRed(true), labels(true));
 
 let s = new XMLSerializer();
 document.querySelector("textarea").textContent = s.serializeToString(svg);
