@@ -46,6 +46,9 @@
 	--font-mono: inconsolata, noto sans mono, monospace;
 	--font-size-code: 11pt;
 	/**/
+
+	--top-border: 2px solid #888;
+	--top-margin: 0.5cm 0;
 }
 
 body {
@@ -111,7 +114,7 @@ h1:not(.title) {
 		content: "Kapitola " counter(chapter);
 		display: block;
 		text-align: right;
-		border-bottom: 2px solid gray;
+		border-bottom: var(--top-border);
 		padding-bottom: var(--space);
 		margin-bottom: var(--space);
 	}
@@ -209,10 +212,16 @@ li p {
 		content: string(chapter-number) ": " string(chapter-name);
 	}
 */
-	@top-left { font-family: var(--font-sans-serif); }
-	@top-right { font-family: var(--font-sans-serif); }
+	@top-left { font-family: var(--font-sans-serif); white-space: nowrap; }
+	@top-right { font-family: var(--font-sans-serif); white-space: nowrap; }
 	@bottom-left { font-family: var(--font-sans-serif); }
 	@bottom-right { font-family: var(--font-sans-serif); }
+
+	@top-left-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
+	@top-left { border-bottom: var(--top-border); margin: var(--top-margin); }
+	@top-center { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; width:100%; }
+	@top-right { border-bottom: var(--top-border); margin: var(--top-margin); }
+	@top-right-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
 }
 
 @page :left {
@@ -229,20 +238,32 @@ li p {
 #TOC + h1 { page: first; }
 @page first {
 	counter-reset: page 1;
-	@top-left { content: ""; }
-	@top-right { content: ""; }
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
 }
 
 h1:not(.title) { page: chapter; }
 @page chapter {
-	@top-left { content: ""; }
-	@top-right { content: ""; }
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
 }
 
 header, #TOC { page: no-numbers; }
 @page no-numbers {
 	@bottom-left { content: ""; }
 	@bottom-right { content: ""; }
+
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
 }
 
 #TOC {
