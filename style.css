@@ -181,11 +181,6 @@ li p {
 		color: inherit;
 	}
 
-	p, pre {
-		orphans: 3;
-		widows: 3;
-	}
-
 	/* kapitola zacina na nove strance */
 	h1:not(.title), #TOC {
 		page-break-before: always;
