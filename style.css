@@ -35,7 +35,7 @@
 	--font-serif: eb garamond, serif;
 	--font-serif: crimson pro, eb garamond, serif;
 
-	--font-size-body: 12pt;
+	--font-size-body: 11pt;
 	--line-height: 1.3;
 
 	/* noto mode */
@@ -44,11 +44,10 @@
 
 	/* inconsolata mode */
 	--font-mono: inconsolata, noto sans mono, monospace;
-	--font-size-code: 11pt;
+	--font-size-code: 10pt;
 	/**/
 
 	--top-border: 2px solid #888;
-	--top-margin: 0.5cm 0;
 }
 
 body {
@@ -79,7 +78,7 @@ figure {
 	text-align: center;
 
 	figcaption {
-		width: 12cm;
+		width: 11cm;
 		margin-top: 1em;
 		font-size: 90%;
 		font-family: var(--font-sans-serif);
@@ -91,7 +90,7 @@ figure {
 }
 
 img {
-	max-width: 13cm;
+	max-width: 12cm;
 }
 
 ul, ol {
@@ -194,12 +193,16 @@ li p {
 }
 
 @page {
-	/* B5: 176mm x 250mm, margin 20mm => obsah 136mm */
+	/* B5: 176mm x 250mm, margin 2x20mm => obsah 136mm */
 	size: B5;
 	margin: 24mm 20mm;
+	--top-margin: 0.5cm 0;
 
+	/* B5: 156mm x 232mm, margin 20mm+15mm => obsah 121mm */
 	size: 156mm 232mm;
-	margin: 24mm 15mm;
+	margin: 20mm 15mm 15mm 15mm;
+	margin: 24mm 15mm 20mm 15mm;
+	--top-margin: 0.3cm 0 0.5cm 0;
 /*
 	@top-center {
 		font-family: var(--font-sans-serif);
@@ -212,18 +215,20 @@ li p {
 	@bottom-right { font-family: var(--font-sans-serif); }
 
 	@top-left-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
-	@top-left { border-bottom: var(--top-border); margin: var(--top-margin); }
+	@top-left { margin: var(--top-margin); }
 	@top-center { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; width:100%; }
-	@top-right { border-bottom: var(--top-border); margin: var(--top-margin); }
+	@top-right { margin: var(--top-margin); }
 	@top-right-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
 }
 
 @page :left {
+	margin-right: 20mm;
 	@top-left { content: string(chapter-number); }
 	@bottom-left { content: counter(page); }
 }
 
 @page :right {
+	margin-left: 20mm;
 	@top-right { content: string(chapter-name); }
 	@bottom-right { content: counter(page); }
 }
