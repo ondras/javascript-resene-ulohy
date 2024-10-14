@@ -197,6 +197,9 @@ li p {
 	/* B5: 176mm x 250mm, margin 20mm => obsah 136mm */
 	size: B5;
 	margin: 24mm 20mm;
+
+	size: 156mm 232mm;
+	margin: 24mm 15mm;
 /*
 	@top-center {
 		font-family: var(--font-sans-serif);
