@@ -7,12 +7,12 @@
                  fill="none" stroke="#888888" stroke-width="2" />
         <ellipse cx="225" cy="75" rx="100" ry="50"
                  fill="none" stroke="#888888" stroke-width="2" />
-        <text x="54" y="68">začátek</text>
+        <text x="44" y="68">začátek</text>
         <text x="230" y="145">konec</text>
       </g>
     </defs>
 
-    <g font-size="24" font-family="sans-serif">
+    <g font-size="20" font-family="sans-serif">
       <g transform="translate(0,0)">
         <text x="50" y="210">large-arc-flag=0</text>
         <text x="50" y="240">sweep-flag=0</text>
