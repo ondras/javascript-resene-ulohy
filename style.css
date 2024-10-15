@@ -35,6 +35,8 @@
 	--font-serif: eb garamond, serif;
 	--font-serif: crimson pro, eb garamond, serif;
 
+	--font-size-header: 10pt;
+	--font-size-footer: 10pt;
 	--font-size-body: 11pt;
 	--line-height: 1.3;
 
@@ -79,7 +81,7 @@ figure {
 
 	figcaption {
 		width: 11cm;
-		margin-top: 1em;
+		margin: 1em auto 0 auto;
 		font-size: 90%;
 		font-family: var(--font-sans-serif);
 		&::before {
@@ -201,7 +203,7 @@ li p {
 	/* B5: 156mm x 232mm, margin 20mm+15mm => obsah 121mm */
 	size: 156mm 232mm;
 	margin: 20mm 15mm 15mm 15mm;
-	margin: 24mm 15mm 20mm 15mm;
+	margin: 20mm 15mm 20mm 15mm;
 	--top-margin: 0.3cm 0 0.5cm 0;
 /*
 	@top-center {
@@ -209,10 +211,10 @@ li p {
 		content: string(chapter-number) ": " string(chapter-name);
 	}
 */
-	@top-left { font-family: var(--font-sans-serif); white-space: nowrap; }
-	@top-right { font-family: var(--font-sans-serif); white-space: nowrap; }
-	@bottom-left { font-family: var(--font-sans-serif); }
-	@bottom-right { font-family: var(--font-sans-serif); }
+	@top-left { font-family: var(--font-sans-serif); white-space: nowrap; font-size: var(--font-size-header); }
+	@top-right { font-family: var(--font-sans-serif); white-space: nowrap; font-size: var(--font-size-header);}
+	@bottom-left { font-family: var(--font-sans-serif); font-weight: bold; font-size: var(--font-size-footer);}
+	@bottom-right { font-family: var(--font-sans-serif); font-weight: bold; font-size: var(--font-size-footer);}
 
 	@top-left-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
 	@top-left { margin: var(--top-margin); }
