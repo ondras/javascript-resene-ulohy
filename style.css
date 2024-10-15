@@ -178,6 +178,10 @@ li p {
 		margin: 0;
 	}
 
+	header {
+		display: none;
+	}
+
 	a {
 		color: inherit;
 	}
@@ -205,22 +209,19 @@ li p {
 	margin: 24mm 20mm;
 	--top-margin: 0.5cm 0;
 
-/*
-	@top-center {
-		font-family: var(--font-sans-serif);
-		content: string(chapter-number) ": " string(chapter-name);
-	}
-*/
+	marks: crop;
+	bleed: 3mm;
+
 	@top-left { font-family: var(--font-sans-serif); white-space: nowrap; font-size: var(--font-size-header); }
 	@top-right { font-family: var(--font-sans-serif); white-space: nowrap; font-size: var(--font-size-header);}
 	@bottom-left { font-family: var(--font-sans-serif); font-weight: bold; font-size: var(--font-size-footer);}
 	@bottom-right { font-family: var(--font-sans-serif); font-weight: bold; font-size: var(--font-size-footer);}
 
-	@top-left-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
+	@top-left-corner { border-bottom: var(--top-border); margin: var(--top-margin); margin-left: -3mm; content: ""; }
 	@top-left { margin: var(--top-margin); }
 	@top-center { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; width:100%; }
 	@top-right { margin: var(--top-margin); }
-	@top-right-corner { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; }
+	@top-right-corner { border-bottom: var(--top-border); margin: var(--top-margin); margin-right: -3mm; content: ""; }
 }
 
 @page :left {
@@ -234,17 +235,7 @@ li p {
 }
 
 
-#TOC + h1 { page: first; }
-@page first {
-	counter-reset: page 1;
-	@top-left { visibility: hidden; }
-	@top-right { visibility: hidden; }
-	@top-center { visibility: hidden; }
-	@top-left-corner { visibility: hidden; }
-	@top-right-corner { visibility: hidden; }
-}
-
-h1:not(.title) { page: chapter; }
+h1 { page: chapter; }
 @page chapter {
 	@top-left { visibility: hidden; }
 	@top-right { visibility: hidden; }
@@ -253,8 +244,9 @@ h1:not(.title) { page: chapter; }
 	@top-right-corner { visibility: hidden; }
 }
 
-header, #TOC { page: no-numbers; }
-@page no-numbers {
+#TOC { page: toc; }
+@page toc {
+	counter-reset: page 5;
 	@bottom-left { content: ""; }
 	@bottom-right { content: ""; }
 
