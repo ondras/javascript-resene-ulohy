@@ -35,9 +35,9 @@
 	--font-serif: eb garamond, serif;
 	--font-serif: crimson pro, eb garamond, serif;
 
-	--font-size-header: 10pt;
-	--font-size-footer: 10pt;
-	--font-size-body: 11pt;
+	--font-size-header: 11pt;
+	--font-size-footer: 11pt;
+	--font-size-body: 12pt;
 	--line-height: 1.3;
 
 	/* noto mode */
@@ -46,7 +46,7 @@
 
 	/* inconsolata mode */
 	--font-mono: inconsolata, noto sans mono, monospace;
-	--font-size-code: 10pt;
+	--font-size-code: 11pt;
 	/**/
 
 	--top-border: 2px solid #888;
@@ -80,7 +80,7 @@ figure {
 	text-align: center;
 
 	figcaption {
-		width: 11cm;
+		width: 12cm;
 		margin: 1em auto 0 auto;
 		font-size: 90%;
 		font-family: var(--font-sans-serif);
@@ -92,7 +92,7 @@ figure {
 }
 
 img {
-	max-width: 12cm;
+	max-width: 13cm;
 }
 
 ul, ol {
@@ -195,16 +195,16 @@ li p {
 }
 
 @page {
+	/* specialni B5: 156mm x 232mm, margin 20mm+15mm => obsah 121mm */
+	size: 156mm 232mm;
+	margin: 20mm 15mm 20mm 15mm; /* + vnitrni maji mit 20mm */
+	--top-margin: 0.3cm 0 0.5cm 0;
+
 	/* B5: 176mm x 250mm, margin 2x20mm => obsah 136mm */
 	size: B5;
 	margin: 24mm 20mm;
 	--top-margin: 0.5cm 0;
 
-	/* B5: 156mm x 232mm, margin 20mm+15mm => obsah 121mm */
-	size: 156mm 232mm;
-	margin: 20mm 15mm 15mm 15mm;
-	margin: 20mm 15mm 20mm 15mm;
-	--top-margin: 0.3cm 0 0.5cm 0;
 /*
 	@top-center {
 		font-family: var(--font-sans-serif);
@@ -224,13 +224,11 @@ li p {
 }
 
 @page :left {
-	margin-right: 20mm;
 	@top-left { content: string(chapter-number); }
 	@bottom-left { content: counter(page); }
 }
 
 @page :right {
-	margin-left: 20mm;
 	@top-right { content: string(chapter-name); }
 	@bottom-right { content: counter(page); }
 }
