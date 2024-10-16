@@ -186,9 +186,9 @@ li p {
 		color: inherit;
 	}
 
-	/* kapitola zacina na nove strance */
-	h1:not(.title), #TOC {
-		page-break-before: always;
+	/* kapitola zacina na nove (prave) strance */
+	h1 {
+		page-break-before: right;
 	}
 
 	/* Work around pandoc ticket #9292 */
@@ -206,11 +206,11 @@ li p {
 
 	/* B5: 176mm x 250mm, margin 2x20mm => obsah 136mm */
 	size: B5;
-	margin: 24mm 20mm;
+	margin: 20mm;
 	--top-margin: 0.5cm 0;
 
 	marks: crop;
-	bleed: 3mm;
+	bleed: 4mm;
 
 	@top-left { font-family: var(--font-sans-serif); white-space: nowrap; font-size: var(--font-size-header); }
 	@top-right { font-family: var(--font-sans-serif); white-space: nowrap; font-size: var(--font-size-header);}
@@ -222,6 +222,10 @@ li p {
 	@top-center { border-bottom: var(--top-border); margin: var(--top-margin); content: ""; width:100%; }
 	@top-right { margin: var(--top-margin); }
 	@top-right-corner { border-bottom: var(--top-border); margin: var(--top-margin); margin-right: -3mm; content: ""; }
+}
+
+@page :blank {
+	@top-left { content: ""; }
 }
 
 @page :left {
@@ -260,7 +264,7 @@ h1 { page: chapter; }
 #TOC {
 	font-family: var(--font-sans-serif);
 
-	h2 { margin-top: 0; }
+	h2 { margin: 0 0 0.5em 0; }
 	ul { list-style: none; }
 
 	> ul {

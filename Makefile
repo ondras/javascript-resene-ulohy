@@ -11,5 +11,11 @@ build/book-%.html: src/ch%.md src/*.yml
 build/%.pdf: build/%.html *.css
 	$(WEASYPRINT) -d --pdf-variant pdf/a-1b $< $@
 
+build/test.html: src/*.md src/*.yml
+	$(PANDOC) $(PANDOC_ARGS) -o $@ src/ch01.md src/ch02.md src/ch07.md src/metadata.yml
+
+build/test.pdf: build/test.html *.css
+	$(WEASYPRINT) -d --pdf-variant pdf/a-1b $< $@
+
 vlna:
 	vlna -x 266e6273703b -v KkSsVvZzOoUuAaIi
