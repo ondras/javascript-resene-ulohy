@@ -146,7 +146,7 @@ code {
 }
 
 pre {
-	background-color: #f0f0f0;
+	background-color: #e6e6e6;
 }
 
 p {
@@ -186,6 +186,11 @@ li p {
 		color: inherit;
 	}
 
+	p {
+		orphans: 3;
+		widows: 3;
+	}
+
 	/* kapitola zacina na nove (prave) strance */
 	h1 {
 		page-break-before: right;
@@ -199,15 +204,12 @@ li p {
 }
 
 @page {
-	/* specialni B5: 156mm x 232mm, margin 20mm+15mm => obsah 121mm */
-	size: 156mm 232mm;
-	margin: 20mm 15mm 20mm 15mm; /* + vnitrni maji mit 20mm */
-	--top-margin: 0.3cm 0 0.5cm 0;
-
 	/* B5: 176mm x 250mm, margin 2x20mm => obsah 136mm */
 	size: B5;
 	margin: 20mm;
 	--top-margin: 0.5cm 0;
+	--inner-margin: 22mm;
+	--outer-margin: 18mm;
 
 	marks: crop;
 	bleed: 4mm;
@@ -225,17 +227,27 @@ li p {
 }
 
 @page :blank {
-	@top-left { content: ""; }
+	@bottom-left { content: ""; }
+
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
 }
 
 @page :left {
 	@top-left { content: string(chapter-number); }
 	@bottom-left { content: counter(page); }
+	margin-left: var(--outer-margin);
+	margin-right: var(--inner-margin);
 }
 
 @page :right {
 	@top-right { content: string(chapter-name); }
 	@bottom-right { content: counter(page); }
+	margin-left: var(--inner-margin);
+	margin-right: var(--outer-margin);
 }
 
 
