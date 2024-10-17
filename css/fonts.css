@@ -1,0 +1,31 @@
+/*
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+*/
+
+
+@font-face {
+	font-family: Crimson Pro;
+	font-style: normal;
+	src: url("../fonts/CrimsonPro.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: Crimson Pro;
+	font-style: italic;
+	src: url("../fonts/CrimsonPro-Italic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: Inconsolata;
+	src: url("../fonts/Inconsolata.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: Jost;
+	src: url("../fonts/Jost-VF.ttf") format("truetype");
+}

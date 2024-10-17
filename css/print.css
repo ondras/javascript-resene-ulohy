@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+}
+
+p {
+	orphans: 3;
+	widows: 3;
+}
+
+/* kapitola zacina na nove (prave) strance */
+h1 {
+	page-break-before: right;
+}
+
+/* pandoc ticket #9292 */
+pre > code.sourceCode > span {
+	text-indent: 0 !important;
+	padding-left: 0 !important;
+}

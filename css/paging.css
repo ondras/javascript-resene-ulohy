@@ -1,0 +1,81 @@
+@page {
+	/* B5: 176mm x 250mm, margin 2x20mm => obsah 136mm */
+	size: B5;
+	margin: 20mm;
+	--top-margin: 0.5cm 0;
+	--font-size-header: 11pt;
+	--font-size-footer: 11pt;
+
+	@top-left {
+		white-space: nowrap;
+		font-family: var(--font-sans-serif);
+		font-size: var(--font-size-header);
+		margin: var(--top-margin);
+	}
+
+	@top-right {
+		white-space: nowrap;
+		font-family: var(--font-sans-serif);
+		font-size: var(--font-size-header);
+		margin: var(--top-margin);
+	}
+
+	@top-left-corner {
+		border-bottom: var(--top-border);
+		margin: var(--top-margin);
+		content: "";
+	}
+	@top-right-corner {
+		border-bottom: var(--top-border);
+		margin: var(--top-margin);
+		content: "";
+	}
+	@top-center {
+		border-bottom: var(--top-border);
+		margin: var(--top-margin);
+		content: "";
+		width:100%;
+	}
+
+	@bottom-left {
+		font-weight: bold;
+		font-family: var(--font-sans-serif);
+		font-size: var(--font-size-footer);
+	}
+	@bottom-right {
+		font-weight: bold;
+		font-family: var(--font-sans-serif);
+		font-size: var(--font-size-footer);
+	}
+}
+
+@page :left {
+	@top-left { content: string(chapter-number); }
+	@bottom-left { content: counter(page); }
+}
+
+@page :right {
+	@top-right { content: string(chapter-name); }
+	@bottom-right { content: counter(page); }
+}
+
+h1 { page: chapter; }
+@page chapter {
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
+}
+
+#TOC, .title { page: toc; }
+@page toc {
+	@bottom-left { content: ""; }
+	@bottom-right { content: ""; }
+
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
+}

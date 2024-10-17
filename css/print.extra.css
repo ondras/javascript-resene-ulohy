@@ -1,0 +1,47 @@
+/* pravidla specificka pro generovani pdf do tiskarny */
+
+/* titul dodava nakladatelstvi */
+header {
+	display: none;
+}
+
+/* kapitola zacina na prave/verso strance */
+h1 {
+	page-break-before: right;
+}
+
+/* tim se objevuji vakaty */
+@page :blank {
+	@bottom-left { content: "" !important; }
+	@top-left { visibility: hidden; }
+	@top-right { visibility: hidden; }
+	@top-center { visibility: hidden; }
+	@top-left-corner { visibility: hidden; }
+	@top-right-corner { visibility: hidden; }
+}
+
+/* orezove znacky a spadavky kvuli sede care */
+@page {
+	marks: crop;
+	bleed: 4mm;
+	--inner-margin: 22mm;
+	--outer-margin: 18mm;
+
+	@top-left-corner { margin-left: -4mm; }
+	@top-right-corner { margin-right: -4mm; }
+}
+
+/* dle domluvy zacina obsah na pate strane */
+@page toc {
+	counter-reset: page 5;
+}
+
+@page :left {
+	margin-left: var(--outer-margin);
+	margin-right: var(--inner-margin);
+}
+
+@page :right {
+	margin-left: var(--inner-margin);
+	margin-right: var(--outer-margin);
+}
