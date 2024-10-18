@@ -24,11 +24,8 @@ h1 {
 @page {
 	marks: crop;
 	bleed: 4mm;
-	--inner-margin: 22mm;
-	--outer-margin: 18mm;
-
-	@top-left-corner { margin-left: -4mm; }
-	@top-right-corner { margin-right: -4mm; }
+	@top-left-corner { margin-left: -4mm !important; }
+	@top-right-corner { margin-right: -4mm !important; }
 }
 
 /* dle domluvy zacina obsah na pate strane */
@@ -36,11 +33,15 @@ h1 {
 	counter-reset: page 5;
 }
 
+/* posun o 2 mm od stredu */
+@page {
+	--inner-margin: 22mm;
+	--outer-margin: 18mm;
+}
 @page :left {
 	margin-left: var(--outer-margin);
 	margin-right: var(--inner-margin);
 }
-
 @page :right {
 	margin-left: var(--inner-margin);
 	margin-right: var(--outer-margin);
