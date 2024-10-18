@@ -1,31 +1,28 @@
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import Results from "./Results.jsx";
 
 
 export default function App() {
-  let [results, setResults] = useState([]);
-  let [query, setQuery] = useState("");
-  let inputRef = useRef();
+  let [results, setResults] = useState({});
 
   async function onSubmit(e) {
     e.preventDefault();
-    let query = inputRef.current.value;
+    let query = e.target.elements.query.value;
     let response = await fetch(`/search?query=${encodeURIComponent(query)}`);
     let results = await response.json();
-    setQuery(query);
-    setResults(results);
+    setResults({results, query});
   }
 
   return <>
     <h1>Hledání</h1>
     <form onSubmit={onSubmit}>
       <label>
-        Hledaný výraz: <input type="text" ref={inputRef} />
+        Hledaný výraz: <input type="text" name="query" />
       </label>
       <label>
         <button>🔎</button>
       </label>
     </form>
-    <Results data={results} query={query} />
+    <Results data={results} />
   </>;
 }

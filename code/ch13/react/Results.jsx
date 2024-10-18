@@ -1,20 +1,18 @@
-import React from "react";
 import Result from "./Result.jsx";
 
 
 export default function Results(props) {
-	if (!props.query) {
-		return;
-	}
+	const { query, results } = props.data;
 
-	if (!props.data.length) {
+	if (!query) { return; }
+
+	if (!results.length) {
 		return <p>Tomuto dotazu nevyhovují žádné písně 🙁</p>;
 	}
 
+	let items = results.map(item => <Result data={item} />);
 	return <>
-		<h2>Nalezené písně pro dotaz: {props.query}</h2>
-		<ol>
-			{props.data.map(item => <Result data={item} />)}
-		</ol>
+		<h2>Nalezené písně pro dotaz: {query}</h2>
+		<ol>{items}</ol>
 	</>;
 }

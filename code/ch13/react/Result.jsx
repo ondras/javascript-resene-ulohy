@@ -1,6 +1,3 @@
-import React from "react";
-
-
 export default function Result(props) {
 	let html = {__html: props.data.text};
 	return <li>
