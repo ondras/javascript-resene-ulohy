@@ -13,7 +13,7 @@ p {
 
 /* kapitola zacina na nove (prave) strance */
 h1 {
-	page-break-before: right;
+	page-break-before: always;
 }
 
 /* pandoc ticket #9292 */

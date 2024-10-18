@@ -7,7 +7,7 @@ header {
 
 /* kapitola zacina na prave/verso strance */
 h1 {
-	page-break-before: right;
+	page-break-before: right !important;
 }
 
 /* tim se objevuji vakaty */
