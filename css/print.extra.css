@@ -29,7 +29,7 @@ h1 {
 }
 
 /* dle domluvy zacina obsah na pate strane */
-@page toc {
+@page :nth(1 of toc) {
 	counter-reset: page 5;
 }
 

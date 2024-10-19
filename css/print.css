@@ -12,7 +12,7 @@ p {
 }
 
 /* kapitola zacina na nove (prave) strance */
-h1 {
+h1:not(.title) {
 	page-break-before: always;
 }
 
