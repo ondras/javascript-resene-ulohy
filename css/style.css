@@ -145,6 +145,10 @@ li p {
 		}
 	}
 
+	li {
+		page-break-inside: avoid;
+	}
+
 	a {
 		text-decoration: none;
 		color: inherit;
