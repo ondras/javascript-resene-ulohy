@@ -1,8 +1,8 @@
 PANDOC := pandoc
 PANDOC_ARGS := -f markdown -t html5 --template template -V toc-title:"Obsah" --css css/style.css -s --toc --toc-depth 2 --tab-stop 2 --highlight-style highlight.theme
 
-WEASYPRINT := ~/WeasyPrint/venv/bin/weasyprint
-# WEASYPRINT := weasyprint
+# WEASYPRINT := ~/WeasyPrint/venv/bin/weasyprint
+WEASYPRINT := weasyprint
 WEASYPRINT_ARGS := -d --pdf-variant pdf/a-1b
 
 all: build/book.pdf build/book.extra.pdf
