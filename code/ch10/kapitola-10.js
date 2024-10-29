@@ -4,8 +4,10 @@ let DATA = [
 	{name: "Trezor", date: "1965-04-27", price: 456}
 ];
 
-let dateFormat = new Intl.DateTimeFormat(undefined, {dateStyle:"long"});
-let priceFormat = new Intl.NumberFormat(undefined, {style:"currency", currency:"CZK"});
+let priceOptions = {style:"currency", currency:"CZK"};
+let priceFormat = new Intl.NumberFormat(undefined, priceOptions);
+let dateOptions = {dateStyle:"long"};
+let dateFormat = new Intl.DateTimeFormat(undefined, dateOptions);
 
 function buildItem(item) {
 	let li = document.createElement("li");
