@@ -1,9 +1,27 @@
-<svg viewBox="0 0 200 170" width="400" height="340"></svg>
-<textarea></textarea>
+<!doctype html>
+<div class="a">
+  <svg viewBox="0 0 200 170" width="400" height="340"></svg>
+  <textarea></textarea>
+</div>
+
+<div class="b">
+  <svg viewBox="0 0 200 170" width="400" height="340"></svg>
+  <textarea></textarea>
+</div>
+
+<div class="c">
+  <svg viewBox="0 0 200 170" width="400" height="340"></svg>
+  <textarea></textarea>
+</div>
 
 <script>
 const offset = 30;
 const cell = 20;
+
+const grid_color = "hsl(0, 0%, 60%)";
+const thin_color = "hsl(240, 100%, 30%)";
+const mid_color = "hsl(0, 100%, 60%)";
+const wide_color = "hsl(0, 50%, 80%)";
 
 function elm(name) {
   return document.createElementNS("http://www.w3.org/2000/svg", name);
@@ -22,10 +40,10 @@ function grid() {
   d += `L 0 ${(cells+0.5)*cell}`;
   l1.setAttribute("d", d);
   l1.setAttribute("fill", "none");
-  l1.setAttribute("stroke", "#000");
+  l1.setAttribute("stroke", grid_color);
   l1.setAttribute("stroke-width", "2");
 
-  l2.setAttribute("stroke", "#000");
+  l2.setAttribute("stroke", grid_color);
   d = "";
   for (let i=0;i<=cells;i++) {
   		d += `M 0 ${i*cell + 0.5}`;
@@ -42,7 +60,7 @@ function grid() {
 function text(str) {
   let t = elm("text");
 
-  t.setAttribute("font-size", "12px");
+  t.setAttribute("font-size", "10px");
   t.setAttribute("font-family", "sans-serif");
   t.setAttribute("font-weight", "bold");
   t.setAttribute("text-anchor", "middle");
@@ -52,19 +70,20 @@ function text(str) {
 
 function labels(fixed) {
   let g = elm("g");
-  let fo = (fixed ? 0.75*cell : 0);
+  let fo = (fixed ? 0.2*cell : -0.1*cell);
 
   let t1 = text("(0; 0)");
+  t1.setAttribute("fill", grid_color);
   t1.setAttribute("x", offset);
   t1.setAttribute("y", offset-4);
 
   let t2 = text(fixed ? "(3,5; 1)" : "(3; 1)");
-  t2.setAttribute("fill", "red");
+  t2.setAttribute("fill", thin_color);
   t2.setAttribute("x", offset + 4*cell + fo);
   t2.setAttribute("y", offset + 1*cell -4);
 
   let t3 = text(fixed? "(3,5; 5)" : "(3; 5)");
-  t3.setAttribute("fill", "red");
+  t3.setAttribute("fill", thin_color);
   t3.setAttribute("x", offset + 4*cell + fo);
   t3.setAttribute("y", offset + 5.5*cell + 4);
 
@@ -73,9 +92,9 @@ function labels(fixed) {
   return g;
 }
 
-function lineRed(fixed) {
+function lineThin(fixed) {
   let path = elm("path");
-  path.setAttribute("stroke", "red");
+  path.setAttribute("stroke", thin_color);
   path.setAttribute("stroke-width", "2")
   let fo = (fixed ? 0.5*cell : 0);
   let d = "";
@@ -85,9 +104,9 @@ function lineRed(fixed) {
   return path;
 }
 
-function lineBlue(fixed) {
+function lineMid(fixed) {
   let path = elm("path");
-  path.setAttribute("stroke", "blue");
+  path.setAttribute("stroke", mid_color);
   path.setAttribute("stroke-width", `${cell}`)
   let fo = (fixed ? 0.5*cell : 0);
   let d = "";
@@ -97,9 +116,9 @@ function lineBlue(fixed) {
   return path;
 }
 
-function lineCyan() {
+function lineWide() {
   let path = elm("path");
-  path.setAttribute("stroke", "rgba(100, 100, 255, 0.5)");
+  path.setAttribute("stroke", wide_color);
   path.setAttribute("stroke-width", `${2*cell}`)
   let d = "";
   d += `M ${offset + 3*cell + 0.5} ${offset + cell}`;
@@ -108,11 +127,17 @@ function lineCyan() {
   return path;
 }
 
-let svg = document.querySelector("svg");
-// svg.append(grid(), lineRed(), labels());
-// svg.append(lineCyan(), lineBlue(), grid(), lineRed(), labels());
-svg.append(lineBlue(true), grid(), lineRed(true), labels(true));
-
 let s = new XMLSerializer();
-document.querySelector("textarea").textContent = s.serializeToString(svg);
+
+let svg1 = document.querySelector(".a svg");
+svg1.append(grid(), lineThin(), labels());
+document.querySelector(".a textarea").textContent = s.serializeToString(svg1);
+
+let svg2 = document.querySelector(".b svg");
+svg2.append(lineWide(), lineMid(), grid(), lineThin(), labels());
+document.querySelector(".b textarea").textContent = s.serializeToString(svg2);
+
+let svg3 = document.querySelector(".c svg");
+svg3.append(lineMid(true), grid(), lineThin(true), labels(true));
+document.querySelector(".c textarea").textContent = s.serializeToString(svg3);
 </script>
