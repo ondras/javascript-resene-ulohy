@@ -1,5 +1,5 @@
 PANDOC := pandoc
-PANDOC_ARGS := -f markdown -t html5 --template template -V toc-title:"Obsah" --css css/style.css -s --toc --toc-depth 2 --tab-stop 2 --highlight-style highlight.theme
+PANDOC_ARGS := -f markdown -t html5 --template template -L nbsp.lua -V toc-title:"Obsah" --css css/style.css -s --toc --toc-depth 2 --tab-stop 2 --highlight-style highlight.theme
 
 WEASYPRINT := ~/WeasyPrint/venv/bin/weasyprint
 # WEASYPRINT := weasyprint
@@ -18,6 +18,9 @@ build/%.pdf: build/%.html css/*
 
 build/%.extra.pdf: build/%.html css/*
 	$(WEASYPRINT) $(WEASYPRINT_ARGS) -s css/print.extra.css $< $@
+
+build/%.no-code.pdf: build/%.html css/*
+	$(WEASYPRINT) $(WEASYPRINT_ARGS) -s css/print.no-code.css $< $@
 
 build/test.html: src/*.md src/*.yml
 	$(PANDOC) $(PANDOC_ARGS) -o $@ src/ch01.md src/ch02.md src/ch07.md src/metadata.yml
