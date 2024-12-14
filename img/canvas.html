@@ -92,16 +92,27 @@ function labels(fixed) {
   return g;
 }
 
-function lineThin(fixed) {
-  let path = elm("path");
-  path.setAttribute("stroke", thin_color);
-  path.setAttribute("stroke-width", "2")
+function markers(fixed) {
   let fo = (fixed ? 0.5*cell : 0);
-  let d = "";
-  d += `M ${offset + 3*cell + fo + 0.5} ${offset + cell}`;
-  d += `L ${offset + 3*cell + fo + 0.5} ${offset + 5*cell + 1}`;
-  path.setAttribute("d", d);
-  return path;
+
+  let g = elm("g");
+  let r = 2.5;
+
+  let c1 = elm("circle");
+  c1.setAttribute("r", r);
+  c1.setAttribute("fill", thin_color);
+  c1.setAttribute("cx", offset + 3*cell + fo + 0.5);
+  c1.setAttribute("cy", offset + cell + 0.5);
+
+  let c2 = elm("circle");
+  c2.setAttribute("r", r);
+  c2.setAttribute("fill", thin_color);
+  c2.setAttribute("cx", offset + 3*cell + fo + 0.5);
+  c2.setAttribute("cy", offset + 5*cell + 0.5);
+
+
+  g.append(c1, c2);
+  return g;
 }
 
 function lineMid(fixed) {
@@ -130,14 +141,14 @@ function lineWide() {
 let s = new XMLSerializer();
 
 let svg1 = document.querySelector(".a svg");
-svg1.append(grid(), lineThin(), labels());
+svg1.append(lineMid(false), grid(), markers(), labels());
 document.querySelector(".a textarea").textContent = s.serializeToString(svg1);
 
 let svg2 = document.querySelector(".b svg");
-svg2.append(lineWide(), lineMid(), grid(), lineThin(), labels());
+svg2.append(lineWide(), grid(), markers(), labels());
 document.querySelector(".b textarea").textContent = s.serializeToString(svg2);
 
 let svg3 = document.querySelector(".c svg");
-svg3.append(lineMid(true), grid(), lineThin(true), labels(true));
+svg3.append(lineMid(true), grid(), markers(true), labels(true));
 document.querySelector(".c textarea").textContent = s.serializeToString(svg3);
 </script>
