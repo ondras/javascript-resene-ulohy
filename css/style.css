@@ -119,7 +119,6 @@ p {
 
 p code, li > code {
 	font-weight: bold;
-	white-space: nowrap;
 }
 
 li p {
