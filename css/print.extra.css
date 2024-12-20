@@ -39,10 +39,10 @@ h1 {
 	--outer-margin: 18mm;
 }
 @page :left {
-	margin-left: var(--outer-margin);
-	margin-right: var(--inner-margin);
+	margin-left: var(--outer-margin) !important;
+	margin-right: var(--inner-margin) !important;
 }
 @page :right {
-	margin-left: var(--inner-margin);
-	margin-right: var(--outer-margin);
+	margin-left: var(--inner-margin) !important;
+	margin-right: var(--outer-margin) !important;
 }
