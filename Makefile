@@ -18,12 +18,3 @@ build/%.pdf: build/%.html css/*
 
 build/%.extra.pdf: build/%.html css/*
 	$(WEASYPRINT) $(WEASYPRINT_ARGS) -s css/print.extra.css $< $@
-
-build/%.no-code.pdf: build/%.html css/*
-	$(WEASYPRINT) $(WEASYPRINT_ARGS) -s css/print.no-code.css $< $@
-
-build/test.html: src/*.md src/*.yml
-	$(PANDOC) $(PANDOC_ARGS) -o $@ src/ch01.md src/ch02.md src/ch07.md src/metadata.yml
-
-vlna:
-	vlna -x 266e6273703b -v KkSsVvZzOoUuAaIi
