@@ -1,14 +1,22 @@
 # JavaScript: řešené úlohy
 
-Tento repozitář obsahuje zdrojové kódy, texty a další součásti knihy Ondřeje Žáry [JavaScript: řešené úlohy](FIXME). Pro čtenáře je zde k dispozici:
+Tento repozitář obsahuje zdrojové kódy, texty a další součásti knihy Ondřeje Žáry [JavaScript: řešené úlohy](https://eshop.cvut.cz/simplifyworks/cs/eoc/public/product/392705452-zara-ondrej-javascript-resene-ulohy). Pro čtenáře je zde k dispozici:
 
   - [Issue tracker](https://github.com/ondras/javascript-resene-ulohy/issues) na hlášení nedostatků
   - [Zdrojové kódy řešených úloh](https://github.com/ondras/javascript-resene-ulohy/tree/main/code)
 
 Dva měsíce po vydání tištěné verze bude k dispozici kniha také elektronicky:
 
-  - [HTML ke čtení v prohlížeči](FIXME)
-  - [PDF ke stažení či tisku](FIXME)
+  - [HTML ke čtení v prohlížeči](#)
+  - [PDF ke stažení či tisku](#)
+
+
+## Errata
+
+Seznam chyb v tištěné verzi knihy. V elektronické jsou opraveny.
+
+  - Zatím žádné nebyly nahlášeny. Dejte vědět, pokud nějakou naleznete!
+
 
 ## Lokální sestavení knihy
 
