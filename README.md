@@ -15,7 +15,9 @@ Dva měsíce po vydání tištěné verze bude k dispozici kniha také elektroni
 
 Seznam chyb v tištěné verzi knihy. V elektronické jsou opraveny.
 
-  - Zatím žádné nebyly nahlášeny. Dejte vědět, pokud nějakou naleznete!
+  - Strana 57, ukázka zdrojového kódu s try-catch. V obou dvou try-catch blocích je zachycená výjimka označena písmenem `e`, což je nepraktické, neboť tak dojde k překrytí hodnoty `e` (událost), která je parametrem funkce. V prvním případě to nevadí, ve druhém je to přímo zdrojem chyby -- neboť nelze zavolat `e.preventDefault()` (v proměnné `e` je tou dobou výjimka, nikoliv událost). Náprava je snadná, stačí zachycenou hodnotu libovolně přejmenovat, např. `catch (err)`.
+
+Dejte vědět, pokud nějakou další naleznete!
 
 
 ## Lokální sestavení knihy
