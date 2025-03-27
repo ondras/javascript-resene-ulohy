@@ -15,7 +15,11 @@ Dva měsíce po vydání tištěné verze bude k dispozici kniha také elektroni
 
 Seznam chyb v tištěné verzi knihy. V elektronické jsou opraveny.
 
+  - Strana 57, funkce `checkPhone()`. V podmínce chybí vykřičník (výjimku má způsobit neshoda s regulárním výrazem).
+
   - Strana 57, ukázka zdrojového kódu s try-catch. V obou dvou try-catch blocích je zachycená výjimka označena písmenem `e`, což je nepraktické, neboť tak dojde k překrytí hodnoty `e` (událost), která je parametrem funkce. V prvním případě to nevadí, ve druhém je to přímo zdrojem chyby -- neboť nelze zavolat `e.preventDefault()` (v proměnné `e` je tou dobou výjimka, nikoliv událost). Náprava je snadná, stačí zachycenou hodnotu libovolně přejmenovat, např. `catch (err)`.
+
+  - Strana 114, překlep ve slově *funkcionalitu*.
 
 Dejte vědět, pokud nějakou další naleznete!
 
