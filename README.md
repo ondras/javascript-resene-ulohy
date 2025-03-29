@@ -21,6 +21,8 @@ Seznam chyb v tištěné verzi knihy. V elektronické jsou opraveny.
 
   - Strana 114, překlep ve slově *funkcionalitu*.
 
+  - Strana 141, namísto *pole řetězců* má být *pole objektů*.
+
 Dejte vědět, pokud nějakou další naleznete!
 
 
