@@ -34,8 +34,8 @@ Repoziář obsahuje kompletní zdrojové texty knihy v jazyce Markdown. Proces t
     - tento proces zahrnuje vkládání nezlomitelných mezer pomocí [lua pluginu](https://github.com/ondras/javascript-resene-ulohy/blob/main/nbsp.lua)
 	- `make build/book.html`
 1. Konverze HTML -> PDF pomocí Weasyprint
-    - ideální je použít [fork Weasyprintu](https://github.com/ondras/WeasyPrint/tree/issue-2270), který řeší [issue 2270](https://github.com/Kozea/WeasyPrint/issues/2270)
-	- `make build/book.pdf`
+    - použít verzi / fork / commit, která obsahuje opravy pro https://github.com/Kozea/WeasyPrint/issues/2270 a https://github.com/Kozea/WeasyPrint/issues/2269 (tj. např. release >= 66.0)
+    - `make build/book.pdf`
 1. Volitelná konverze do PDF vhodného pro knižní sazbu s pomocí extra stylopisu [print.extra.css](https://github.com/ondras/javascript-resene-ulohy/blob/main/css/print.extra.css)
     - tento styl odebírá titulní stránku, kapitoly začíná na pravé straně, přidává spady a ořezové značky a posouvá okraje směrem od středu
   	- `make build/book.extra.pdf`
