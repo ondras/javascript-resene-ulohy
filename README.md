@@ -5,7 +5,7 @@ Tento repozitář obsahuje zdrojové kódy, texty a další součásti knihy Ond
   - [Issue tracker](https://github.com/ondras/javascript-resene-ulohy/issues) na hlášení nedostatků
   - [Zdrojové kódy řešených úloh](https://github.com/ondras/javascript-resene-ulohy/tree/main/code)
 
-Dva měsíce po vydání tištěné verze bude k dispozici kniha také elektronicky:
+Dva měsíce po vydání tištěné verze byla kniha zveřejněna také elektronicky:
 
   - [HTML ke čtení v prohlížeči](https://ondras.github.io/javascript-resene-ulohy/build/book.html)
   - [PDF ke stažení či tisku](https://ondras.github.io/javascript-resene-ulohy/build/book.pdf)
