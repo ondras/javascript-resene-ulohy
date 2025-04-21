@@ -7,8 +7,8 @@ Tento repozitář obsahuje zdrojové kódy, texty a další součásti knihy Ond
 
 Dva měsíce po vydání tištěné verze bude k dispozici kniha také elektronicky:
 
-  - [HTML ke čtení v prohlížeči](#)
-  - [PDF ke stažení či tisku](#)
+  - [HTML ke čtení v prohlížeči](https://ondras.github.io/javascript-resene-ulohy/build/book.html)
+  - [PDF ke stažení či tisku](https://ondras.github.io/javascript-resene-ulohy/build/book.pdf)
 
 
 ## Errata
