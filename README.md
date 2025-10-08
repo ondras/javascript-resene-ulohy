@@ -19,6 +19,8 @@ Seznam chyb v tištěné verzi knihy. V elektronické jsou opraveny.
 
   - Strana 57, ukázka zdrojového kódu s try-catch. V obou dvou try-catch blocích je zachycená výjimka označena písmenem `e`, což je nepraktické, neboť tak dojde k překrytí hodnoty `e` (událost), která je parametrem funkce. V prvním případě to nevadí, ve druhém je to přímo zdrojem chyby -- neboť nelze zavolat `e.preventDefault()` (v proměnné `e` je tou dobou výjimka, nikoliv událost). Náprava je snadná, stačí zachycenou hodnotu libovolně přejmenovat, např. `catch (err)`.
 
+  - Strana 70, v odrážkovém seznamu na konci stránky jsou logické operátory prohozené.
+
   - Strana 114, překlep ve slově *funkcionalitu*.
 
   - Strana 141, namísto *pole řetězců* má být *pole objektů*.
